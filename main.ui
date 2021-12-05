@@ -25,6 +25,9 @@
    <iconset>
     <normaloff>icons/logo.png</normaloff>icons/logo.png</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <property name="documentMode">
    <bool>true</bool>
   </property>
@@ -34,7 +37,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_3">
     <item row="0" column="0" rowspan="2">
-     <widget class="QTabWidget" name="tabWidget">
+     <widget class="QTabWidget" name="DashboardHandler">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
         <horstretch>0</horstretch>
@@ -50,21 +53,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QTabBar{
-	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0));
-}
-QTabBar:tab{
-border-radius: 0px;
-border-width:0px;
-
-}
-QTabBar::tab:selected, QTabBar::tab:hover {
-border-bottom-width:3px;
-border-top-width:3px;
-
-}
-
-</string>
+       <string notr="true">QTabWidget{border-width:0px;}</string>
       </property>
       <property name="currentIndex">
        <number>0</number>
@@ -87,9 +76,12 @@ border-top-width:3px;
          <number>0</number>
         </property>
         <item row="0" column="0">
-         <widget class="QTabWidget" name="tabWidget_4">
+         <widget class="QTabWidget" name="GraphTabWidget">
+          <property name="styleSheet">
+           <string notr="true">QTabWidget{border-width:0px;}</string>
+          </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="tab_13">
            <attribute name="title">
@@ -98,6 +90,9 @@ border-top-width:3px;
            <layout class="QGridLayout" name="gridLayout_10">
             <item row="0" column="0">
              <widget class="QScrollArea" name="RM_DashBoard">
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
               <property name="widgetResizable">
                <bool>true</bool>
               </property>
@@ -106,8 +101,8 @@ border-top-width:3px;
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>752</width>
-                 <height>602</height>
+                 <width>764</width>
+                 <height>584</height>
                 </rect>
                </property>
               </widget>
@@ -117,11 +112,14 @@ border-top-width:3px;
           </widget>
           <widget class="QWidget" name="tab_14">
            <attribute name="title">
-            <string>     Packaging Materials</string>
+            <string>Packaging Materials</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_25">
             <item row="0" column="0">
              <widget class="QScrollArea" name="PM_DashBoard">
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
               <property name="widgetResizable">
                <bool>true</bool>
               </property>
@@ -130,14 +128,19 @@ border-top-width:3px;
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>752</width>
-                 <height>602</height>
+                 <width>764</width>
+                 <height>584</height>
                 </rect>
                </property>
               </widget>
              </widget>
             </item>
            </layout>
+          </widget>
+          <widget class="QWidget" name="tab_15">
+           <attribute name="title">
+            <string>Orders</string>
+           </attribute>
           </widget>
          </widget>
         </item>
@@ -389,7 +392,7 @@ border-top-width:3px;
   </widget>
   <widget class="QDockWidget" name="dockWidget">
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">QDockWidget{	background-color: #263957;}</string>
    </property>
    <property name="floating">
     <bool>false</bool>
@@ -411,13 +414,27 @@ border-top-width:3px;
      <string notr="true"/>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
      <item>
       <widget class="QFrame" name="frame">
        <property name="styleSheet">
-        <string notr="true">#materials_and_products_widget{border-radius: 4px;}</string>
+        <string notr="true">#materials_and_products_widget{
+	border-color: rgb(145, 65, 172);
+}</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::NoFrame</enum>
        </property>
        <layout class="QGridLayout" name="gridLayout_9">
         <property name="leftMargin">
@@ -449,7 +466,7 @@ border-right-width:3px;
            <enum>QTabWidget::West</enum>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>1</number>
           </property>
           <property name="iconSize">
            <size>
@@ -598,12 +615,19 @@ border-radius: 6px;
                 <property name="horizontalScrollMode">
                  <enum>QAbstractItemView::ScrollPerPixel</enum>
                 </property>
-                <property name="spacing">
-                 <number>6</number>
-                </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
                 </property>
+                <item>
+                 <property name="text">
+                  <string>New Item</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>New Item</string>
+                 </property>
+                </item>
                </widget>
               </item>
               <item row="3" column="0" colspan="6">
@@ -628,7 +652,7 @@ border-radius: 6px;
           </widget>
           <widget class="QWidget" name="tab_4">
            <attribute name="title">
-            <string> PM    </string>
+            <string>PM</string>
            </attribute>
            <attribute name="toolTip">
             <string>Packing materials</string>
@@ -762,7 +786,7 @@ border-radius: 6px;
           </widget>
           <widget class="QWidget" name="tab_10">
            <attribute name="title">
-            <string>UPP       </string>
+            <string>UPP</string>
            </attribute>
            <attribute name="toolTip">
             <string>Unpacked products</string>
@@ -903,7 +927,7 @@ border-radius: 6px;
           </widget>
           <widget class="QWidget" name="tab_6">
            <attribute name="title">
-            <string>PP       </string>
+            <string>PP</string>
            </attribute>
            <attribute name="toolTip">
             <string>Packed product</string>
@@ -1113,7 +1137,7 @@ border-top-width:3px;
 </string>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <property name="iconSize">
         <size>
@@ -1819,7 +1843,7 @@ border-top-width:3px;
   </action>
  </widget>
  <tabstops>
-  <tabstop>tabWidget</tabstop>
+  <tabstop>DashboardHandler</tabstop>
  </tabstops>
  <resources/>
  <connections/>

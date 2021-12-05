@@ -1,0 +1,104 @@
+QWidget{
+    outline: 0;
+}
+
+QToolTip{
+    padding:10px;
+}
+
+#GraphTabWidget QWidget{
+	border: 0px solid rgba(0,0,0,0);
+}
+
+QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid #C2C7CB;
+}
+
+QTabWidget::tab-bar {
+    left: 0px; 
+}
+
+QTabBar::tab {
+    padding: 10px;
+}
+
+
+#GraphTabWidget QWidget[frame_type = graph]{
+    border-radius: 5px;
+}
+#GraphTabWidget QWidget[frame_type = handler]{
+	border-radius: 5px;
+}
+
+#dockWidgetContents, #dockWidgetContents_2{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+
+#Loading_win_ProgressBar {
+	background-color: rgba(0,0,0,0);
+    border: 0px solid grey;
+    border-radius: 15px;
+}
+#Loading_win_ProgressBar:chunk{
+    border: 0px solid grey;
+    border-radius: 15px;   
+}
+
+
+QPushButton{
+	border-radius:0px;
+    
+}
+
+
+
+QListWidget{
+    border-width: 0px;  
+}
+QListWidget::item{
+    margin:5px;
+    padding: 10px;
+}
+
+
+
+
+QScrollBar{
+    margin: 0;
+    border-radius:2px;
+    background-color: rgba(0,0,0,0);
+}
+QScrollBar:vertical{
+    width: 10px;
+}
+QScrollBar:horizontal{
+    height: 10px;
+}
+
+QScrollBar::add-line{
+    height: 0px;
+}
+    
+QScrollBar::sub-line{
+    height: 0px;
+}
+    
+QScrollBar::add-page, QScrollBar::sub-page {
+    height: 0px;
+}
+
+QScrollBar::handle{
+    border-width:0px ;
+    border-radius:5px;
+    
+}
+
+
+QLineEdit{
+    border-radius: 0px;
+    padding:5px;
+}
+
