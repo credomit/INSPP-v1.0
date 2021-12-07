@@ -81,7 +81,7 @@
            <string notr="true">QTabWidget{border-width:0px;}</string>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tab_13">
            <attribute name="title">
@@ -101,7 +101,7 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>764</width>
+                 <width>782</width>
                  <height>584</height>
                 </rect>
                </property>
@@ -128,7 +128,7 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>764</width>
+                 <width>782</width>
                  <height>584</height>
                 </rect>
                </property>
@@ -466,7 +466,7 @@ border-right-width:3px;
            <enum>QTabWidget::West</enum>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>3</number>
           </property>
           <property name="iconSize">
            <size>
@@ -496,51 +496,28 @@ border-radius: 6px;
             <property name="bottomMargin">
              <number>0</number>
             </property>
-            <item row="0" column="0">
-             <widget class="QLabel" name="rm_label">
-              <property name="font">
-               <font>
-                <weight>75</weight>
-                <italic>false</italic>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Raw mateirals</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
             <item row="1" column="0">
              <layout class="QGridLayout" name="gridLayout_11">
-              <item row="0" column="4">
-               <widget class="QPushButton" name="RawMaterial_Edit_Button">
+              <item row="1" column="1">
+               <widget class="QLabel" name="rm_loading_label">
                 <property name="minimumSize">
                  <size>
-                  <width>27</width>
-                  <height>27</height>
+                  <width>40</width>
+                  <height>30</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>27</width>
-                  <height>27</height>
+                  <width>40</width>
+                  <height>30</height>
                  </size>
                 </property>
                 <property name="text">
                  <string/>
                 </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
                </widget>
               </item>
-              <item row="0" column="5">
+              <item row="1" column="5">
                <widget class="QPushButton" name="RawMaterial_Add_Button">
                 <property name="minimumSize">
                  <size>
@@ -573,33 +550,55 @@ border-radius: 6px;
                 </property>
                </widget>
               </item>
-              <item row="0" column="1">
-               <widget class="QLabel" name="rm_loading_label">
+              <item row="1" column="4">
+               <widget class="QPushButton" name="RawMaterial_Edit_Button">
                 <property name="minimumSize">
                  <size>
-                  <width>40</width>
-                  <height>30</height>
+                  <width>27</width>
+                  <height>27</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>40</width>
-                  <height>30</height>
+                  <width>27</width>
+                  <height>27</height>
                  </size>
                 </property>
                 <property name="text">
                  <string/>
                 </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
                </widget>
               </item>
-              <item row="1" column="0" colspan="6">
+              <item row="4" column="0" colspan="6">
+               <widget class="QLabel" name="raw_materials_list_info">
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                  <italic>false</italic>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0" colspan="6">
                <widget class="QLineEdit" name="RawMaterials_UI_SearchBar">
                 <property name="placeholderText">
                  <string>Search...</string>
                 </property>
                </widget>
               </item>
-              <item row="2" column="0" colspan="6">
+              <item row="3" column="0" colspan="6">
                <widget class="QListWidget" name="RawMaterials_UI_List">
                 <property name="font">
                  <font>
@@ -618,31 +617,22 @@ border-radius: 6px;
                 <property name="sortingEnabled">
                  <bool>true</bool>
                 </property>
-                <item>
-                 <property name="text">
-                  <string>New Item</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>New Item</string>
-                 </property>
-                </item>
                </widget>
               </item>
-              <item row="3" column="0" colspan="6">
-               <widget class="QLabel" name="raw_materials_list_info">
+              <item row="0" column="0" colspan="6">
+               <widget class="QLabel" name="rm_label">
                 <property name="font">
                  <font>
-                  <pointsize>9</pointsize>
+                  <weight>75</weight>
                   <italic>false</italic>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
-                 <string/>
+                 <string>Raw mateirals</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -687,21 +677,6 @@ border-radius: 6px;
                 </property>
                </widget>
               </item>
-              <item row="1" column="0">
-               <widget class="QLabel" name="packing_materials_count">
-                <property name="font">
-                 <font>
-                  <italic>false</italic>
-                 </font>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
               <item row="1" column="2">
                <widget class="QPushButton" name="add_pm">
                 <property name="minimumSize">
@@ -735,6 +710,26 @@ border-radius: 6px;
                 </property>
                </widget>
               </item>
+              <item row="2" column="0" colspan="3">
+               <widget class="QLineEdit" name="Pack_UI_SearchBar"/>
+              </item>
+              <item row="0" column="0" colspan="3">
+               <widget class="QLabel" name="pm_label">
+                <property name="font">
+                 <font>
+                  <weight>75</weight>
+                  <italic>false</italic>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Packing materials</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
               <item row="1" column="1">
                <widget class="QPushButton" name="delete_pm">
                 <property name="minimumSize">
@@ -760,25 +755,20 @@ border-radius: 6px;
                 </property>
                </widget>
               </item>
-              <item row="0" column="0" colspan="3">
-               <widget class="QLabel" name="pm_label">
+              <item row="4" column="0" colspan="3">
+               <widget class="QLabel" name="PM_list_info">
                 <property name="font">
                  <font>
-                  <weight>75</weight>
-                  <italic>false</italic>
-                  <bold>true</bold>
+                  <pointsize>9</pointsize>
                  </font>
                 </property>
                 <property name="text">
-                 <string>Packing materials</string>
+                 <string/>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                 </property>
                </widget>
-              </item>
-              <item row="2" column="0" colspan="3">
-               <widget class="QLineEdit" name="Pack_UI_SearchBar"/>
               </item>
              </layout>
             </item>
@@ -916,8 +906,16 @@ border-radius: 6px;
               </item>
               <item row="4" column="0" colspan="3">
                <widget class="QLabel" name="Unpackaged_product_list_info">
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                 </font>
+                </property>
                 <property name="text">
                  <string>info</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
@@ -927,7 +925,7 @@ border-radius: 6px;
           </widget>
           <widget class="QWidget" name="tab_6">
            <attribute name="title">
-            <string>PP</string>
+            <string>FP</string>
            </attribute>
            <attribute name="toolTip">
             <string>Packed product</string>
@@ -937,34 +935,9 @@ border-radius: 6px;
              <number>0</number>
             </property>
             <item row="1" column="0">
-             <layout class="QGridLayout" name="gridLayout_4" columnstretch="1,0,0,0">
-              <item row="0" column="2">
-               <widget class="QPushButton" name="delete_packed_product">
-                <property name="minimumSize">
-                 <size>
-                  <width>27</width>
-                  <height>27</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>27</width>
-                  <height>27</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="3">
-               <widget class="QPushButton" name="add_packed_product">
+             <layout class="QGridLayout" name="gridLayout_4" columnstretch="1,0,0">
+              <item row="1" column="2">
+               <widget class="QPushButton" name="add_final_product">
                 <property name="minimumSize">
                  <size>
                   <width>27</width>
@@ -996,33 +969,8 @@ border-radius: 6px;
                 </property>
                </widget>
               </item>
-              <item row="0" column="1">
-               <widget class="QPushButton" name="edit_packed_product">
-                <property name="minimumSize">
-                 <size>
-                  <width>27</width>
-                  <height>27</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>27</width>
-                  <height>27</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0" colspan="4">
-               <widget class="QListWidget" name="packed_product_list">
+              <item row="3" column="0" colspan="3">
+               <widget class="QListWidget" name="final_product_list">
                 <property name="font">
                  <font>
                   <family>Ubuntu</family>
@@ -1045,7 +993,7 @@ border-radius: 6px;
                 </property>
                </widget>
               </item>
-              <item row="0" column="0">
+              <item row="1" column="0">
                <widget class="QLabel" name="packed_products_count">
                 <property name="font">
                  <font>
@@ -1060,24 +1008,67 @@ border-radius: 6px;
                 </property>
                </widget>
               </item>
+              <item row="4" column="0" colspan="3">
+               <widget class="QLabel" name="final_product_list_info">
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QPushButton" name="delete_final_product">
+                <property name="minimumSize">
+                 <size>
+                  <width>27</width>
+                  <height>27</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>27</width>
+                  <height>27</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0" colspan="3">
+               <widget class="QLineEdit" name="Final_products_UI_SearchBar"/>
+              </item>
+              <item row="0" column="0" colspan="3">
+               <widget class="QLabel" name="pp_label">
+                <property name="font">
+                 <font>
+                  <weight>75</weight>
+                  <italic>false</italic>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Final products</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
              </layout>
-            </item>
-            <item row="0" column="0">
-             <widget class="QLabel" name="pp_label">
-              <property name="font">
-               <font>
-                <weight>75</weight>
-                <italic>false</italic>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Packed products</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
             </item>
            </layout>
           </widget>

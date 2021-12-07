@@ -4,7 +4,7 @@ QToolTip{
 }
 
 QMainWindow, QWidget[form_type = subwindow] {
-	background-color:#0e1621;
+	background-color:#dee2e7;
 }
 
 QMenuBar, QMenu{

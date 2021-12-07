@@ -1,11 +1,9 @@
+
 from INSLPCModel.fields import Fields
 from INSLPCModel.Model import INSAPP, Model
 from INSLPCModel.Statements import *
 import json, notify2, random
 import datetime
-
-
-
 
 
 class Raw_material(Model):
@@ -45,7 +43,6 @@ class Raw_material(Model):
         return QLT_list
 
     def Quantity_More_Than(self, objects, **kwagrs):
-        print('fff3')
         QMT_list = []
         value = kwagrs.get('value')
         if value != None and len(value.split(' ')) >= 2:
@@ -82,9 +79,21 @@ class Raw_material(Model):
         
         old_inputs      = json.loads(old_data['Materials_Inputs'])
         old_outputs     = json.loads(old_data['Materials_Outputs'])
+        old_reword      = json.loads(old_data['Reword'])
+        old_ruin        = json.loads(old_data['Ruin'])
+
+        
 
         new_inputs      = json.loads(new_data['Materials_Inputs'])
         new_outputs     = json.loads(new_data['Materials_Outputs'])
+        new_reword      = json.loads(new_data['Reword'])
+        new_ruin        = json.loads(new_data['Ruin'])
+
+        added_ruin      = [i for i in new_ruin if i not in old_ruin and i['Quantity_Withdrawal'] ]
+        removed_ruin    = [i for i in old_ruin if i not in new_ruin and i['Quantity_Withdrawal'] ]
+
+        added_reword    = [i for i in new_reword if i not in old_reword and i['Quantity_Reword'] ]
+        removed_reword  = [i for i in old_reword if i not in new_reword and i['Quantity_Reword'] ]
 
         added_inputs    = [i for i in new_inputs if i not in old_inputs]
         removed_inputs  = [i for i in old_inputs if i not in new_inputs]
@@ -93,21 +102,23 @@ class Raw_material(Model):
         removed_outputs = [i for i in old_outputs if i not in new_outputs]
 
         total_changed_quantity = sum( [ self.Get_Base_Quantity( i['Unit'], i['Quantity']) for i in added_inputs ] ) 
+        total_changed_quantity += sum( [ self.Get_Base_Quantity( i['Unit'], i['Quantity']) for i in added_reword ] )
         total_changed_quantity += sum( [ self.Get_Base_Quantity( i['Unit'], i['Quantity']) for i in removed_outputs ] )
+        total_changed_quantity += sum( [ self.Get_Base_Quantity( i['Unit'], i['Quantity']) for i in removed_ruin ] )
 
         total_changed_quantity -= sum( [ self.Get_Base_Quantity( i['Unit'], i['Quantity']) for i in removed_inputs ] )
         total_changed_quantity -= sum( [ self.Get_Base_Quantity( i['Unit'], i['Quantity']) for i in added_outputs ] )
+        total_changed_quantity -= sum( [ self.Get_Base_Quantity( i['Unit'], i['Quantity']) for i in added_ruin ] )
+        total_changed_quantity -= sum( [ self.Get_Base_Quantity( i['Unit'], i['Quantity']) for i in removed_reword ] )
                                     
 
-        print( self.Get_Base_Quantity( edited_item.Unit, edited_item.Quantity ) , total_changed_quantity)
         new_material_base_quantity =  self.Get_Base_Quantity( edited_item.Unit, edited_item.Quantity ) + total_changed_quantity
         edited_item.Quantity = self.Get_Quantity_for_Static_Unit(edited_item.Unit , new_material_base_quantity)
         edited_item.save()
 
         if edited_item.Low_Quantity_Warning:
             if self.Get_Base_Quantity(edited_item.Minimum_Unit, edited_item.Minimum_Quantity ) >= self.Get_Base_Quantity(edited_item.Unit, edited_item.Quantity):
-                notify2.Notification( self.INSApp.translate("Warning"),self.INSApp.translate("You have low quantity of") + str(edited_item) ,self.INSApp.app_logo ).show()
-
+                notify2.Notification( self.INSApp.translate("Warning")  ,self.INSApp.translate("You have low quantity of") + str(edited_item) ,self.INSApp.app_logo ).show()
 
 
     def Get_Base_Quantity(self, unit, quantity):
@@ -163,8 +174,6 @@ class Raw_material(Model):
     #######################################################################
 
 
-    def __init__(self, INSApp):
-        super().__init__(INSApp)
 
     ui_list = app.UI.RawMaterials_UI_List
     
@@ -228,6 +237,7 @@ class Raw_material(Model):
             'Unit'                 : Fields.ListField(data_from_DictField =  'Material_type'),
             'Date_and_time'        : Fields.DateField(),
             'Reason'               : Fields.CustomListField(list_name = 'RM_REWORD_REASON'),
+            'Quantity_Reword'      : Fields.BoolField(),
             'Note'                 : Fields.TextField()},
             view_name = '''f"""{ data['Quantity'] } { data['Unit'] } ({ data['Date_and_time'] }) """'''  ,
             tooltip   = '''f"""{ data['Reason'] }  """'''  ,
@@ -237,15 +247,22 @@ class Raw_material(Model):
 
             'Quantity'             : Fields.FloatField(),
             'Unit'                 : Fields.ListField(data_from_DictField =  'Material_type'),
-            'Reason'               : Fields.CustomListField(list_name = 'RM_REWORD_REASON'),
             'Date_and_time'        : Fields.DateField(),
+            'Reason'               : Fields.CustomListField(list_name = 'RM_REWORD_REASON'),
+            'Quantity_Withdrawal'  : Fields.BoolField(),
             'Note'                 : Fields.TextField()},
             view_name = '''f"""{ data['Quantity'] } { data['Unit'] } ({ data['Date_and_time'] }) """'''  ,
             tooltip   = '''f"""{ data['Reason'] }  """'''  ,
             
+            ),
+        'extra_info'                        : Fields.ManyToManyField(subfields={
+            'name'                          : Fields.CharField(),
+            'value'                         : Fields.CharField(),
+                },
+            view_name = """ f'{data["name"]}:  {data["value"]}' """,
+            single_view = True
             )
             }
-
 
 
 
@@ -298,7 +315,6 @@ def get_graph_data_type_1(item, field, info_form):
         biggest_value = 0
 
         x_data = []
-        point_data = []
         all_dates = []
 
         sorted_points = {}
@@ -341,13 +357,11 @@ def get_graph_data_type_1(item, field, info_form):
                 all_dates.append(day.isoformat())
             x_data = [ all_dates.index(i) for i in data.keys() ]
 
-            all_values = range(int(smalles_value), int(biggest_value)+1)
+            #all_values = range(int(smalles_value), int(biggest_value)+1)
 
 
             points = { x_data[i]:y_data[i] for i in range(len(x_data)) }
-
             sorted_x = sorted(points)
-            
             for point in sorted_x:
                 sorted_points[point] = points[point]
                 quantity = get_perfect_unit(points[point],item.Material_type)
@@ -362,7 +376,7 @@ def get_graph_data_type_1(item, field, info_form):
             
         g_values = {
             'x-keys' : ['.']*len(all_dates),
-            'y-keys' : [str(i) for i in range(int(y_range)+2)],
+            'y-keys' : [str(i) for i in range( int(y_range)+2 )],
                               
             'x' : list(sorted_points.keys()),
             'y' : list(sorted_points.values()),
@@ -370,5 +384,3 @@ def get_graph_data_type_1(item, field, info_form):
             'point-data':point_data,
         }
         return g_values
-
-
