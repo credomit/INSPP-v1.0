@@ -3,7 +3,7 @@ QWidget{
 }
 
 QToolTip{
-    padding:10px;
+    padding:5px;
 }
 
 #GraphTabWidget QWidget{

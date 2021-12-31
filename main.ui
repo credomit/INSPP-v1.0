@@ -67,6 +67,113 @@
       <property name="elideMode">
        <enum>Qt::ElideMiddle</enum>
       </property>
+      <widget class="QWidget" name="tab_7">
+       <attribute name="title">
+        <string>Repositories</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_21">
+        <item row="0" column="0">
+         <widget class="QLabel" name="repositories_label">
+          <property name="font">
+           <font>
+            <pointsize>13</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Repositories</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="delete_repository">
+          <property name="minimumSize">
+           <size>
+            <width>27</width>
+            <height>27</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>27</width>
+            <height>27</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="add_repository">
+          <property name="minimumSize">
+           <size>
+            <width>27</width>
+            <height>27</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>27</width>
+            <height>27</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Ubuntu</family>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="3">
+         <widget class="QListWidget" name="repositories_list">
+          <property name="font">
+           <font>
+            <family>Ubuntu</family>
+            <pointsize>13</pointsize>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="verticalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <property name="horizontalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <property name="spacing">
+           <number>6</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="tab">
        <attribute name="title">
         <string>Dashboard</string>
@@ -81,7 +188,7 @@
            <string notr="true">QTabWidget{border-width:0px;}</string>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="tab_13">
            <attribute name="title">
@@ -101,8 +208,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>782</width>
-                 <height>584</height>
+                 <width>68</width>
+                 <height>16</height>
                 </rect>
                </property>
               </widget>
@@ -128,8 +235,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>782</width>
-                 <height>584</height>
+                 <width>68</width>
+                 <height>16</height>
                 </rect>
                </property>
               </widget>
@@ -139,8 +246,27 @@
           </widget>
           <widget class="QWidget" name="tab_15">
            <attribute name="title">
-            <string>Orders</string>
+            <string>Final Product</string>
            </attribute>
+           <layout class="QGridLayout" name="gridLayout_19">
+            <item row="0" column="0">
+             <widget class="QScrollArea" name="FPP_DashBoard">
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_3">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>769</width>
+                 <height>582</height>
+                </rect>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </widget>
         </item>
@@ -151,7 +277,7 @@
         <string notr="true"/>
        </property>
        <attribute name="title">
-        <string>Orders</string>
+        <string>FP Plan</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_16">
         <property name="leftMargin">
@@ -189,7 +315,7 @@
            <item row="0" column="0" rowspan="2" colspan="2">
             <layout class="QGridLayout" name="gridLayout_7">
              <item row="0" column="1">
-              <widget class="QPushButton" name="edit_order">
+              <widget class="QPushButton" name="delete_FP_Plan">
                <property name="minimumSize">
                 <size>
                  <width>27</width>
@@ -213,8 +339,58 @@
                </property>
               </widget>
              </item>
-             <item row="1" column="0" colspan="4">
-              <widget class="QListWidget" name="orders_list">
+             <item row="0" column="2">
+              <widget class="QPushButton" name="add_FP_Plan">
+               <property name="minimumSize">
+                <size>
+                 <width>27</width>
+                 <height>27</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>27</width>
+                 <height>27</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Ubuntu</family>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="orders_label">
+               <property name="font">
+                <font>
+                 <pointsize>13</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Final Products Plans</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="3">
+              <widget class="QListWidget" name="final_products_plans_list">
                <property name="font">
                 <font>
                  <family>Ubuntu</family>
@@ -236,102 +412,126 @@
                <property name="spacing">
                 <number>6</number>
                </property>
-               <item>
-                <property name="text">
-                 <string>New Item</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>New Item</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>New Item</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="orders_label">
-               <property name="font">
-                <font>
-                 <pointsize>13</pointsize>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="text">
-                <string>Orders</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="2">
-              <widget class="QPushButton" name="delete_order">
-               <property name="minimumSize">
-                <size>
-                 <width>27</width>
-                 <height>27</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>27</width>
-                 <height>27</height>
-                </size>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>20</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="3">
-              <widget class="QPushButton" name="add_order">
-               <property name="minimumSize">
-                <size>
-                 <width>27</width>
-                 <height>27</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>27</width>
-                 <height>27</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Ubuntu</family>
-                 <weight>75</weight>
-                 <italic>false</italic>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>20</width>
-                 <height>20</height>
-                </size>
-               </property>
               </widget>
              </item>
             </layout>
            </item>
           </layout>
          </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>UP Plan</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="gridLayout_18">
+          <item row="0" column="2">
+           <widget class="QPushButton" name="add_upp_order">
+            <property name="minimumSize">
+             <size>
+              <width>27</width>
+              <height>27</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>27</width>
+              <height>27</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Ubuntu</family>
+              <weight>75</weight>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="QListWidget" name="upp_orders_list">
+            <property name="font">
+             <font>
+              <family>Ubuntu</family>
+              <pointsize>13</pointsize>
+              <weight>75</weight>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="verticalScrollMode">
+             <enum>QAbstractItemView::ScrollPerPixel</enum>
+            </property>
+            <property name="horizontalScrollMode">
+             <enum>QAbstractItemView::ScrollPerPixel</enum>
+            </property>
+            <property name="movement">
+             <enum>QListView::Snap</enum>
+            </property>
+            <property name="spacing">
+             <number>6</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="orders_label_2">
+            <property name="font">
+             <font>
+              <pointsize>13</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Unpackaged Products Orders</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="delete_upp_order">
+            <property name="minimumSize">
+             <size>
+              <width>27</width>
+              <height>27</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>27</width>
+              <height>27</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -486,8 +686,12 @@ border-right-width:3px;
 border-radius: 6px;
 }</string>
            </property>
+           <attribute name="icon">
+            <iconset>
+             <normaloff>icons/Raw materials Rotate.png</normaloff>icons/Raw materials Rotate.png</iconset>
+           </attribute>
            <attribute name="title">
-            <string>RM</string>
+            <string/>
            </attribute>
            <attribute name="toolTip">
             <string>Raw materials</string>
@@ -498,26 +702,61 @@ border-radius: 6px;
             </property>
             <item row="1" column="0">
              <layout class="QGridLayout" name="gridLayout_11">
-              <item row="1" column="1">
-               <widget class="QLabel" name="rm_loading_label">
-                <property name="minimumSize">
-                 <size>
-                  <width>40</width>
-                  <height>30</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>40</width>
-                  <height>30</height>
-                 </size>
+              <item row="0" column="0" colspan="5">
+               <widget class="QLabel" name="rm_label">
+                <property name="font">
+                 <font>
+                  <weight>75</weight>
+                  <italic>false</italic>
+                  <bold>true</bold>
+                 </font>
                 </property>
                 <property name="text">
-                 <string/>
+                 <string>Raw mateirals</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
-              <item row="1" column="5">
+              <item row="2" column="0" colspan="5">
+               <widget class="QLineEdit" name="RawMaterials_UI_SearchBar">
+                <property name="placeholderText">
+                 <string>Search...</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0" colspan="5">
+               <widget class="QListWidget" name="RawMaterials_UI_List">
+                <property name="font">
+                 <font>
+                  <family>Ubuntu</family>
+                  <weight>75</weight>
+                  <italic>false</italic>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="dragDropMode">
+                 <enum>QAbstractItemView::DragOnly</enum>
+                </property>
+                <property name="defaultDropAction">
+                 <enum>Qt::MoveAction</enum>
+                </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollPerPixel</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollPerPixel</enum>
+                </property>
+                <property name="movement">
+                 <enum>QListView::Free</enum>
+                </property>
+                <property name="sortingEnabled">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4">
                <widget class="QPushButton" name="RawMaterial_Add_Button">
                 <property name="minimumSize">
                  <size>
@@ -550,7 +789,7 @@ border-radius: 6px;
                 </property>
                </widget>
               </item>
-              <item row="1" column="4">
+              <item row="1" column="3">
                <widget class="QPushButton" name="RawMaterial_Edit_Button">
                 <property name="minimumSize">
                  <size>
@@ -575,7 +814,7 @@ border-radius: 6px;
                 </property>
                </widget>
               </item>
-              <item row="4" column="0" colspan="6">
+              <item row="1" column="0" colspan="3">
                <widget class="QLabel" name="raw_materials_list_info">
                 <property name="font">
                  <font>
@@ -587,19 +826,61 @@ border-radius: 6px;
                  <string/>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
-              <item row="2" column="0" colspan="6">
-               <widget class="QLineEdit" name="RawMaterials_UI_SearchBar">
-                <property name="placeholderText">
-                 <string>Search...</string>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_10">
+           <attribute name="icon">
+            <iconset>
+             <normaloff>icons/unpacked products rotate2.png</normaloff>icons/unpacked products rotate2.png</iconset>
+           </attribute>
+           <attribute name="title">
+            <string/>
+           </attribute>
+           <attribute name="toolTip">
+            <string>Unpacked products</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_13">
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item row="0" column="0">
+             <layout class="QGridLayout" name="gridLayout_8">
+              <item row="1" column="1">
+               <widget class="QPushButton" name="delete_Mixed_Material">
+                <property name="minimumSize">
+                 <size>
+                  <width>27</width>
+                  <height>27</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>27</width>
+                  <height>27</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
                 </property>
                </widget>
               </item>
-              <item row="3" column="0" colspan="6">
-               <widget class="QListWidget" name="RawMaterials_UI_List">
+              <item row="3" column="0" colspan="3">
+               <widget class="QLineEdit" name="Mixed_Materials_UI_SearchBar"/>
+              </item>
+              <item row="4" column="0" colspan="3">
+               <widget class="QListWidget" name="unpacked_product_list">
                 <property name="font">
                  <font>
                   <family>Ubuntu</family>
@@ -614,13 +895,49 @@ border-radius: 6px;
                 <property name="horizontalScrollMode">
                  <enum>QAbstractItemView::ScrollPerPixel</enum>
                 </property>
+                <property name="spacing">
+                 <number>6</number>
+                </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
                 </property>
                </widget>
               </item>
-              <item row="0" column="0" colspan="6">
-               <widget class="QLabel" name="rm_label">
+              <item row="1" column="2">
+               <widget class="QPushButton" name="add_Mixed_Material">
+                <property name="minimumSize">
+                 <size>
+                  <width>27</width>
+                  <height>27</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>27</width>
+                  <height>27</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Ubuntu</family>
+                  <weight>75</weight>
+                  <italic>false</italic>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0" colspan="3">
+               <widget class="QLabel" name="upp_label">
                 <property name="font">
                  <font>
                   <weight>75</weight>
@@ -629,10 +946,25 @@ border-radius: 6px;
                  </font>
                 </property>
                 <property name="text">
-                 <string>Raw mateirals</string>
+                 <string>Mixed Materials</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="Mixed_Material_list_info">
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>info</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
@@ -641,8 +973,12 @@ border-radius: 6px;
            </layout>
           </widget>
           <widget class="QWidget" name="tab_4">
+           <attribute name="icon">
+            <iconset>
+             <normaloff>icons/Packing materials Rotate.png</normaloff>icons/Packing materials Rotate.png</iconset>
+           </attribute>
            <attribute name="title">
-            <string>PM</string>
+            <string/>
            </attribute>
            <attribute name="toolTip">
             <string>Packing materials</string>
@@ -755,7 +1091,7 @@ border-radius: 6px;
                 </property>
                </widget>
               </item>
-              <item row="4" column="0" colspan="3">
+              <item row="1" column="0">
                <widget class="QLabel" name="PM_list_info">
                 <property name="font">
                  <font>
@@ -766,7 +1102,7 @@ border-radius: 6px;
                  <string/>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
@@ -774,21 +1110,70 @@ border-radius: 6px;
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_10">
+          <widget class="QWidget" name="tab_6">
+           <attribute name="icon">
+            <iconset>
+             <normaloff>icons/packed products rotate.png</normaloff>icons/packed products rotate.png</iconset>
+           </attribute>
            <attribute name="title">
-            <string>UPP</string>
+            <string/>
            </attribute>
            <attribute name="toolTip">
-            <string>Unpacked products</string>
+            <string>Packed product</string>
            </attribute>
-           <layout class="QGridLayout" name="gridLayout_13">
+           <layout class="QGridLayout" name="gridLayout_6">
             <property name="bottomMargin">
              <number>0</number>
             </property>
-            <item row="0" column="0">
-             <layout class="QGridLayout" name="gridLayout_8">
+            <item row="1" column="0">
+             <layout class="QGridLayout" name="gridLayout_4" columnstretch="1,0,0">
+              <item row="1" column="1">
+               <widget class="QPushButton" name="delete_final_product">
+                <property name="minimumSize">
+                 <size>
+                  <width>27</width>
+                  <height>27</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>27</width>
+                  <height>27</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
               <item row="3" column="0" colspan="3">
-               <widget class="QListWidget" name="unpacked_product_list">
+               <widget class="QLineEdit" name="Final_products_UI_SearchBar"/>
+              </item>
+              <item row="0" column="0" colspan="3">
+               <widget class="QLabel" name="pp_label">
+                <property name="font">
+                 <font>
+                  <weight>75</weight>
+                  <italic>false</italic>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Final products</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0" colspan="3">
+               <widget class="QListWidget" name="final_product_list">
                 <property name="font">
                  <font>
                   <family>Ubuntu</family>
@@ -811,131 +1196,6 @@ border-radius: 6px;
                 </property>
                </widget>
               </item>
-              <item row="2" column="0" colspan="3">
-               <widget class="QLineEdit" name="Unpackaged_products_UI_SearchBar"/>
-              </item>
-              <item row="1" column="1">
-               <widget class="QPushButton" name="delete_unpackaged_product">
-                <property name="minimumSize">
-                 <size>
-                  <width>27</width>
-                  <height>27</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>27</width>
-                  <height>27</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QLabel" name="unpacked_products_count">
-                <property name="font">
-                 <font>
-                  <italic>false</italic>
-                 </font>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0" colspan="3">
-               <widget class="QLabel" name="upp_label">
-                <property name="font">
-                 <font>
-                  <weight>75</weight>
-                  <italic>false</italic>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Unpackaged Product</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="2">
-               <widget class="QPushButton" name="add_unpackaged_product">
-                <property name="minimumSize">
-                 <size>
-                  <width>27</width>
-                  <height>27</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>27</width>
-                  <height>27</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>Ubuntu</family>
-                  <weight>75</weight>
-                  <italic>false</italic>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="0" colspan="3">
-               <widget class="QLabel" name="Unpackaged_product_list_info">
-                <property name="font">
-                 <font>
-                  <pointsize>9</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>info</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="tab_6">
-           <attribute name="title">
-            <string>FP</string>
-           </attribute>
-           <attribute name="toolTip">
-            <string>Packed product</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_6">
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item row="1" column="0">
-             <layout class="QGridLayout" name="gridLayout_4" columnstretch="1,0,0">
               <item row="1" column="2">
                <widget class="QPushButton" name="add_final_product">
                 <property name="minimumSize">
@@ -969,46 +1229,7 @@ border-radius: 6px;
                 </property>
                </widget>
               </item>
-              <item row="3" column="0" colspan="3">
-               <widget class="QListWidget" name="final_product_list">
-                <property name="font">
-                 <font>
-                  <family>Ubuntu</family>
-                  <weight>75</weight>
-                  <italic>false</italic>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="verticalScrollMode">
-                 <enum>QAbstractItemView::ScrollPerPixel</enum>
-                </property>
-                <property name="horizontalScrollMode">
-                 <enum>QAbstractItemView::ScrollPerPixel</enum>
-                </property>
-                <property name="spacing">
-                 <number>6</number>
-                </property>
-                <property name="sortingEnabled">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
               <item row="1" column="0">
-               <widget class="QLabel" name="packed_products_count">
-                <property name="font">
-                 <font>
-                  <italic>false</italic>
-                 </font>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="0" colspan="3">
                <widget class="QLabel" name="final_product_list_info">
                 <property name="font">
                  <font>
@@ -1019,52 +1240,7 @@ border-radius: 6px;
                  <string>TextLabel</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="1">
-               <widget class="QPushButton" name="delete_final_product">
-                <property name="minimumSize">
-                 <size>
-                  <width>27</width>
-                  <height>27</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>27</width>
-                  <height>27</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0" colspan="3">
-               <widget class="QLineEdit" name="Final_products_UI_SearchBar"/>
-              </item>
-              <item row="0" column="0" colspan="3">
-               <widget class="QLabel" name="pp_label">
-                <property name="font">
-                 <font>
-                  <weight>75</weight>
-                  <italic>false</italic>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Final products</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
@@ -1128,7 +1304,7 @@ border-top-width:3px;
 </string>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <property name="iconSize">
         <size>
@@ -1136,412 +1312,6 @@ border-top-width:3px;
          <height>35</height>
         </size>
        </property>
-       <widget class="QWidget" name="tab_8">
-        <attribute name="title">
-         <string/>
-        </attribute>
-        <layout class="QGridLayout" name="gridLayout_21">
-         <item row="0" column="0" alignment="Qt::AlignRight">
-          <widget class="QPushButton" name="clear_notifications">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>27</horstretch>
-             <verstretch>27</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>27</width>
-             <height>27</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>27</width>
-             <height>27</height>
-            </size>
-           </property>
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Clear&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QListWidget" name="Important_notifications">
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-           <property name="currentRow">
-            <number>-1</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="tab_5">
-        <attribute name="icon">
-         <iconset>
-          <normaloff>../icons/White_blue_icons/mail.png</normaloff>../icons/White_blue_icons/mail.png</iconset>
-        </attribute>
-        <attribute name="title">
-         <string/>
-        </attribute>
-        <layout class="QGridLayout" name="gridLayout_5" rowstretch="0">
-         <item row="0" column="0" colspan="2">
-          <widget class="QTabWidget" name="tabWidget_3">
-           <property name="font">
-            <font>
-             <italic>false</italic>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QTabBar{
-	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0));
-}
-QTabBar:tab{
-border-radius: 0px;
-border-width:0px;
-
-}
-QTabBar::tab:selected, QTabBar::tab:hover {
-border-bottom-width:3px;
-border-top-width:3px;
-
-}
-</string>
-           </property>
-           <property name="currentIndex">
-            <number>0</number>
-           </property>
-           <widget class="QWidget" name="tab_7">
-            <attribute name="title">
-             <string>Inbox</string>
-            </attribute>
-            <layout class="QGridLayout" name="gridLayout_18">
-             <item row="0" column="0">
-              <widget class="QLabel" name="inbox_page_info">
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="2">
-              <widget class="QToolButton" name="inbox_mail_page_up">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="arrowType">
-                <enum>Qt::UpArrow</enum>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <widget class="QLabel" name="inbox_count">
-               <property name="font">
-                <font>
-                 <italic>false</italic>
-                </font>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QToolButton" name="inbox_mail_page_down">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="arrowType">
-                <enum>Qt::DownArrow</enum>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0" colspan="3">
-              <widget class="QListWidget" name="inbox_mail">
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <italic>false</italic>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="modelColumn">
-                <number>0</number>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="tab_9">
-            <attribute name="title">
-             <string>Sent</string>
-            </attribute>
-            <layout class="QGridLayout" name="gridLayout_19">
-             <item row="1" column="0">
-              <widget class="QLabel" name="outbox_count">
-               <property name="font">
-                <font>
-                 <italic>false</italic>
-                </font>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="outbox_page_info">
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="2">
-              <widget class="QToolButton" name="outbox_mail_page_up">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="arrowType">
-                <enum>Qt::UpArrow</enum>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QToolButton" name="outbox_mail_page_down">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="arrowType">
-                <enum>Qt::DownArrow</enum>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0" colspan="3">
-              <widget class="QListWidget" name="outbox_mail">
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <italic>false</italic>
-                 <bold>true</bold>
-                </font>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="tab_12">
-            <attribute name="title">
-             <string>Compose</string>
-            </attribute>
-            <layout class="QGridLayout" name="gridLayout_24">
-             <item row="0" column="0">
-              <layout class="QGridLayout" name="gridLayout_23" rowminimumheight="1,4,1,2,1,2,1">
-               <item row="5" column="0" colspan="3">
-                <widget class="QTextEdit" name="mail_body">
-                 <property name="font">
-                  <font>
-                   <italic>false</italic>
-                  </font>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
-                <widget class="QPushButton" name="add_cc_user">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>27</width>
-                   <height>27</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>27</width>
-                   <height>27</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QLineEdit" name="bcc_mail_input">
-                 <property name="font">
-                  <font>
-                   <italic>false</italic>
-                  </font>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="0">
-                <widget class="QPushButton" name="send_mail">
-                 <property name="minimumSize">
-                  <size>
-                   <width>30</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>30</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="2">
-                <widget class="QPushButton" name="add_bcc_user">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>27</width>
-                   <height>27</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>27</width>
-                   <height>27</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="1" colspan="2">
-                <widget class="QLineEdit" name="mail_subject">
-                 <property name="font">
-                  <font>
-                   <italic>false</italic>
-                  </font>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="cc_mail_input">
-                 <property name="font">
-                  <font>
-                   <italic>false</italic>
-                  </font>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="label_3">
-                 <property name="text">
-                  <string>BCC:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="label">
-                 <property name="text">
-                  <string>subject:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0" colspan="3">
-                <widget class="QListWidget" name="bcc_users_list">
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>60</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0, 0, 0,0);</string>
-                 </property>
-                 <property name="verticalScrollMode">
-                  <enum>QAbstractItemView::ScrollPerPixel</enum>
-                 </property>
-                 <property name="horizontalScrollMode">
-                  <enum>QAbstractItemView::ScrollPerPixel</enum>
-                 </property>
-                 <property name="flow">
-                  <enum>QListView::LeftToRight</enum>
-                 </property>
-                 <property name="isWrapping" stdset="0">
-                  <bool>false</bool>
-                 </property>
-                 <property name="resizeMode">
-                  <enum>QListView::Adjust</enum>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0" colspan="3">
-                <widget class="QListWidget" name="cc_users_list">
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>60</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0, 0, 0,0);</string>
-                 </property>
-                 <property name="verticalScrollMode">
-                  <enum>QAbstractItemView::ScrollPerPixel</enum>
-                 </property>
-                 <property name="horizontalScrollMode">
-                  <enum>QAbstractItemView::ScrollPerPixel</enum>
-                 </property>
-                 <property name="flow">
-                  <enum>QListView::LeftToRight</enum>
-                 </property>
-                 <property name="isWrapping" stdset="0">
-                  <bool>false</bool>
-                 </property>
-                 <property name="resizeMode">
-                  <enum>QListView::Adjust</enum>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_2">
-                 <property name="text">
-                  <string>CC:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </widget>
-          </widget>
-         </item>
-        </layout>
-       </widget>
        <widget class="QWidget" name="tab_11">
         <attribute name="icon">
          <iconset>
@@ -1551,131 +1321,11 @@ border-top-width:3px;
          <string/>
         </attribute>
         <layout class="QGridLayout" name="gridLayout_17">
-         <item row="0" column="0" colspan="2">
-          <widget class="QLabel" name="current_folder">
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
            <property name="text">
-            <string/>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; color:#c0bfbc;&quot;&gt;INS Server Section&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#c0bfbc;&quot;&gt;Login to open INS Server section&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0" colspan="2">
-          <widget class="QListWidget" name="drive_list">
-           <property name="spacing">
-            <number>11</number>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QFrame" name="frame_4">
-           <layout class="QGridLayout" name="gridLayout_22">
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <item row="0" column="0" alignment="Qt::AlignLeft">
-             <widget class="QFrame" name="frame_2">
-              <property name="frameShape">
-               <enum>QFrame::VLine</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_2">
-               <property name="spacing">
-                <number>0</number>
-               </property>
-               <property name="leftMargin">
-                <number>0</number>
-               </property>
-               <property name="topMargin">
-                <number>0</number>
-               </property>
-               <property name="rightMargin">
-                <number>0</number>
-               </property>
-               <property name="bottomMargin">
-                <number>0</number>
-               </property>
-               <item>
-                <widget class="QToolButton" name="folder_l3">
-                 <property name="styleSheet">
-                  <string notr="true">border-width: 0px;</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="drive_path_hash_2">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string>/</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QToolButton" name="folder_l2">
-                 <property name="styleSheet">
-                  <string notr="true">border-width: 0px;</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="drive_path_hash_1">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string>/</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QToolButton" name="folder_l1">
-                 <property name="styleSheet">
-                  <string notr="true">border-width: 0px;</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-           </layout>
           </widget>
          </item>
         </layout>
